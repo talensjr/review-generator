@@ -33,7 +33,7 @@ const getReview = async function (props, info) {
 };
 
 customElement(
-  "parent-elem",
+  "review-generator",
   {
     itemCategory: "",
     itemName: "",

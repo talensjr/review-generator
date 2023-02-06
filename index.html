@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Solid App</title>
+    <script src="/src/index.tsx" type="module"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+      * {
+        max-width: 65ch;
+        font-family: "Inconsolata", monospace;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My awesome blog</h1>
+    <article>
+      <h2>Getting the Visual Editor to work for Storyblok + Astro</h2>
+      <p>
+        There’s a relatively new integration between Astro and Storyblok. It’s
+        an SDK that helps developers build a site in Astro and use Storyblok as
+        the CMS. Check out the Github readme for astro-storyblok to get started.
+      </p>
+
+      <p>
+        As I was getting my own Astro-Storyblok project set up, I ran into a few
+        bumps in the road. Those bumps had to do with getting storyblok's visual
+        editor working.
+      </p>
+
+      <h3>Trying out the example project - it works great!</h3>
+      <p>
+        There's an example Astro+storyblok that has been created by the
+        storyblok developer relations team. It's a Stackblitz. When I created an
+        example Storyblok space and connected it to that Stackblitz, I saw the
+        visual editor working great!
+      </p>
+    </article>
+    <span id="blog-review">
+      Please, rate the article:
+      <parent-elem
+        item-category="blog post"
+        item-name="Getting the Visual Editor to work for Storyblok + Astro"
+        max-score="10"
+      >
+        <template name="styles">
+          <style>
+            span > svg {
+              width: 2rem;
+              height: 2rem;
+            }
+            .fetch-button {
+              border-color: aquamarine;
+            }
+          </style>
+        </template>
+        <template name="scoreitem">
+          <span
+            ><svg
+              fill="#000000"
+              height="800px"
+              width="800px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512.062 512.062"
+              xml:space="preserve"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M493.516,170.854l-148.833-19.839L275.114,11.797c-7.86-15.729-30.306-15.729-38.167,0l-69.569,139.217L18.545,170.854
+               c-17.92,2.389-24.932,24.589-11.635,36.837l107.39,98.922L85.628,487.324c-2.966,18.692,18.069,31.703,33.469,20.703
+               l136.934-97.81l136.934,97.81c15.401,11,36.435-2.011,33.47-20.703l-28.673-180.711l107.39-98.922
+               C518.448,195.442,511.437,173.242,493.516,170.854z M360.447,282.976c-5.252,4.838-7.735,11.982-6.616,19.034l22.481,141.688
+               L268.431,366.64c-7.418-5.298-17.382-5.298-24.799,0L135.75,443.698l22.481-141.688c1.119-7.052-1.364-14.196-6.616-19.034
+               l-82.333-75.841l114.944-15.322c7.011-0.935,13.103-5.283,16.265-11.61l55.541-111.145l55.541,111.145
+               c3.162,6.327,9.254,10.676,16.265,11.61l114.944,15.322L360.447,282.976z"
+                  />
+                </g>
+              </g></svg
+          ></span>
+        </template>
+        <template name="scoreitemselected">
+          <span
+            ><svg
+              height="800px"
+              width="800px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 511.999 511.999"
+              xml:space="preserve"
+            >
+              <path
+                style="fill: #f9de8f"
+                d="M265.538,17.937l70.867,143.593c1.549,3.139,4.545,5.316,8.01,5.82l158.464,23.026
+           c8.725,1.268,12.209,11.99,5.896,18.145L394.109,320.293c-2.508,2.443-3.651,5.964-3.059,9.416l27.068,157.824
+           c1.49,8.69-7.631,15.317-15.435,11.214l-141.735-74.515c-3.098-1.63-6.801-1.63-9.9,0l-141.735,74.513
+           c-7.804,4.103-16.925-2.524-15.435-11.214l27.068-157.824c0.592-3.451-0.552-6.972-3.059-9.416L3.224,208.52
+           c-6.313-6.155-2.829-16.877,5.896-18.145l158.464-23.026c3.465-0.503,6.459-2.68,8.01-5.82l70.867-143.593
+           C250.362,10.03,261.636,10.03,265.538,17.937z"
+              />
+              <path
+                style="fill: #f7cf6d"
+                d="M508.775,208.52c6.313-6.155,2.829-16.877-5.896-18.145l-74.471-10.821l-57.167,55.724
+           c-17.296,16.86-25.188,41.15-21.105,64.955l0,0c10.283,59.948-52.641,105.665-106.478,77.36l0,0c-21.379-11.24-46.92-11.24-68.299,0
+           l-68.831,36.186l-12.65,73.75c-1.49,8.69,7.631,15.317,15.435,11.214l141.735-74.515c3.098-1.63,6.801-1.63,9.9,0l141.735,74.515
+           c7.804,4.103,16.925-2.524,15.435-11.214l-27.068-157.824c-0.592-3.451,0.552-6.972,3.059-9.416L508.775,208.52z"
+              /></svg
+          ></span> </template
+      ></parent-elem>
+    </span>
+    <hr />
+    <article>
+      <h2>Client-side Routing without the JavaScript</h2>
+      <p>
+        It's been a while since I wrote a piece about a SolidJS technology
+        innovation. It's been two years now since we added Suspense on the
+        server with Streaming SSR. And even longer to go back to when we first
+        introduced Suspense for data fetching and concurrent rendering back in
+        2019.
+      </p>
+
+      <p>
+        While React had introduced these concepts, implementing them for a
+        fine-grained reactive system was a whole other sort of beast. Requiring
+        a little imagination and completely different solutions that avoided
+        diffing.
+      </p>
+
+      <p>
+        And that is a similar feeling to the exploration we've been doing
+        recently. Inspired equal parts from React Server Components and Island
+        solutions like Marko and Astro, Solid has made it's first steps into
+        Partial Hydration. (comparison at the bottom)
+      </p>
+    </article>
+    <span id="article-review">
+      Please, rate the article:
+      <parent-elem
+        item-category="blog post"
+        item-name="Client-side Routing without the JavaScript"
+        max-score="5"
+        score-item="☑️"
+        score-item-selected="✅"
+      ></parent-elem>
+    </span>
+    <hr />
+
+    <article>
+      <h2>Macbook Air</h2>
+      <p>Laptop: MacBook Air (M1, 2020) 8GB RAM 256GB SSD</p>
+      <span id="laptop-review">
+        Please, rate the article:
+        <parent-elem
+          item-category="laptop"
+          item-name="Macbook Air"
+          max-score="5"
+          score-item="☑️"
+          score-item-selected="✅"
+        ></parent-elem>
+      </span>
+    </article>
+
+    <script type="module">
+      const blogReview = document.getElementById("blog-review");
+      blogReview.addEventListener("onreviewsent", (data) => {
+        console.log("onreviewsent event received", data.detail);
+        alert(
+          `onreviewsent event received ${JSON.stringify(data.detail, null, 2)}`
+        );
+      });
+      const articleReview = document.getElementById("article-review");
+      articleReview.addEventListener("onreviewsent", (data) => {
+        console.log("onreviewsent event received", data.detail);
+        alert(
+          `onreviewsent event received ${JSON.stringify(data.detail, null, 2)}`
+        );
+      });
+      const laptopReview = document.getElementById("laptop-review");
+      laptopReview.addEventListener("onreviewsent", (data) => {
+        console.log("onreviewsent event received", data.detail);
+        alert(
+          `onreviewsent event received ${JSON.stringify(data.detail, null, 2)}`
+        );
+      });
+    </script>
+  </body>
+</html>
